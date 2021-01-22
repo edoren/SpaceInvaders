@@ -3,6 +3,33 @@
 #include <chrono>
 #include <vector>
 
+enum class EntityType { PLAYER, BULLET, ENEMY, UNKNOWN };
+
+class Entity {
+public:
+    void initialize() {}
+
+    void update(uint64_t delta) {}
+
+    void draw() {}
+
+private:
+    EntityType m_type;
+};
+
+class Enemy {};
+
+class Game {
+public:
+    void start();
+
+    void handleKeyPressed();
+
+    void update();
+
+    void render();
+};
+
 int main() {
     // create the window
     sf::RenderWindow window(sf::VideoMode(800, 600), "Space Invaders");
